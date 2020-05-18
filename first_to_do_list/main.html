@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>First_To_Do_List</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- この#appの内側にテンプレートを書き込んでいく -->
+
+
+  タスク名
+  <input v-model="name">
+  <button v-on:click="doAdd">仕事を追加</button>
+  <ul>
+    <li v-for="(item, index) in list" v-bind:key="item.id">
+      ID.{{ item.id }} <span> {{ item.name }} </span>
+      <!-- 削除ボタンをv-for内に作成 -->
+      <button v-on:click="doRemove(index)" >仕事を削除</button>
+    </li>
+  </ul>
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
